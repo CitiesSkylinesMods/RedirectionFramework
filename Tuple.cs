@@ -1,4 +1,4 @@
-﻿namespace RedirectionFramework
+﻿namespace TreeUnlimiter.RedirectionFramework
 {
     public class Tuple<T1, T2>
     {

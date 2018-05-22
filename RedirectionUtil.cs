@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using RedirectionFramework.Attributes;
+using TreeUnlimiter.RedirectionFramework.Attributes;
 
-namespace RedirectionFramework
+namespace TreeUnlimiter.RedirectionFramework
 {
     public static class RedirectionUtil
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using RedirectionFramework.Extensions;
-using RedirectionFramework.Attributes;
+using TreeUnlimiter.RedirectionFramework.Extensions;
+using TreeUnlimiter.RedirectionFramework.Attributes;
 
-namespace RedirectionFramework
+namespace TreeUnlimiter.RedirectionFramework
 {
 
     public class AssemblyRedirector

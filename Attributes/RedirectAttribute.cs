@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RedirectionFramework.Attributes
+namespace TreeUnlimiter.RedirectionFramework.Attributes
 {
     [AttributeUsage(AttributeTargets.Method)]
     public class RedirectAttribute : Attribute

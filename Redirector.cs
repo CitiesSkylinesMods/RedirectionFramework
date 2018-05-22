@@ -1,6 +1,6 @@
-﻿using RedirectionFramework.Extensions;
+﻿using TreeUnlimiter.RedirectionFramework.Extensions;
 
-namespace RedirectionFramework
+namespace TreeUnlimiter.RedirectionFramework
 {
     public class Redirector<T>
     {

@@ -21,7 +21,7 @@ THE SOFTWARE.
 using System;
 using System.Reflection;
 
-namespace RedirectionFramework
+namespace TreeUnlimiter.RedirectionFramework
 {
 
     public class RedirectCallsState
