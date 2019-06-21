@@ -10,13 +10,16 @@ namespace RedirectionFramework.Extensions
         private static readonly Dictionary<Type, Dictionary<MethodInfo, RedirectCallsState>> Redirects
             = new Dictionary<Type, Dictionary<MethodInfo, RedirectCallsState>>();
 
-        public static void Redirect(this Type type)
+        public static IDictionary<MethodInfo, RedirectCallsState> Redirect(this Type type)
         {
-            if (IsRedirected(type))
-            {
-                return;
+            IDictionary<MethodInfo, RedirectCallsState> ret = new Dictionary<MethodInfo, RedirectCallsState>();
+            if (IsRedirected(type)) {
+                return ret;
             }
+
             Redirects[type] = RedirectionUtil.RedirectType(type);
+            ret.AddRange(Redirects[type]);
+            return ret;
         }
 
         public static void Revert(this Type type)
