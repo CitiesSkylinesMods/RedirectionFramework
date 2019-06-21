@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using OtherCSMods.RedirectionFramework;
 using RedirectionFramework.Attributes;
 
 namespace RedirectionFramework
