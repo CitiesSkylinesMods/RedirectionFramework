@@ -39,9 +39,9 @@ namespace TrafficManager.RedirectionFramework {
 		/// <param name="from"></param>
 		/// <param name="to"></param>
 		public static RedirectCallsState RedirectCalls(MethodInfo from, MethodInfo to) {
-			// GetFunctionPointer enforces compilation of the method.
-			var fptr1 = from.MethodHandle.GetFunctionPointer();
-			var fptr2 = to.MethodHandle.GetFunctionPointer();
+            // GetFunctionPointer enforces compilation of the method.
+            IntPtr fptr1 = from.MethodHandle.GetFunctionPointer();
+            IntPtr fptr2 = to.MethodHandle.GetFunctionPointer();
 
 			Log._Debug($"RedirectionHelper.RedirectCalls({from.Name}, {to.Name}) called. IsRedirected1={IsRedirected(fptr1, fptr2)} IsRedirected2={IsRedirected(from.MethodHandle.GetFunctionPointer(), to.MethodHandle.GetFunctionPointer())}");
 			Log._Debug($"RedirectionHelper.RedirectCalls({from.Name}, {to.Name}): before redir. fptr1_fnc={GetRedir(fptr1).ArrayToString()} fptr1={(ulong)fptr1.ToInt64()} fptr2={(ulong)fptr2.ToInt64()}");
@@ -55,13 +55,13 @@ namespace TrafficManager.RedirectionFramework {
 		}
 
 		public static void RevertRedirect(MethodInfo from, RedirectCallsState state) {
-			var fptr1 = from.MethodHandle.GetFunctionPointer();
+            IntPtr fptr1 = from.MethodHandle.GetFunctionPointer();
 			RevertJumpTo(fptr1, state);
 		}
 
 		public static bool IsRedirected(MethodInfo from, MethodInfo to) {
-			var fptr1 = from.MethodHandle.GetFunctionPointer();
-			var fptr2 = to.MethodHandle.GetFunctionPointer();
+            IntPtr fptr1 = from.MethodHandle.GetFunctionPointer();
+            IntPtr fptr2 = to.MethodHandle.GetFunctionPointer();
 			return IsRedirected(fptr1, fptr2);
 		}
 

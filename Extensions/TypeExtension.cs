@@ -31,7 +31,7 @@ namespace TrafficManager.RedirectionFramework.Extensions {
 		}
 
 		public static bool IsAnonymousType(this Type t) {
-			var name = t.Name;
+			string name = t.Name;
 			if (name.Length < 3) {
 				return false;
 			}

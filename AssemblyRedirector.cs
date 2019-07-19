@@ -15,7 +15,7 @@ namespace TrafficManager.RedirectionFramework {
 			IDictionary<MethodInfo, RedirectCallsState> ret = new Dictionary<MethodInfo, RedirectCallsState>();
 			_types = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.GetCustomAttributes(typeof(TargetTypeAttribute), false).Length > 0).ToArray();
 			Log.Info($"Found {_types.Count()} types for redirection.");
-			foreach (var type in _types) {
+			foreach (Type type in _types) {
 				Log.Info($"Processing redirectes in type {type.FullName}.");
 				ret.AddRange(type.Redirect());
 			}
@@ -26,7 +26,7 @@ namespace TrafficManager.RedirectionFramework {
 			if (_types == null) {
 				return;
 			}
-			foreach (var type in _types) {
+			foreach (Type type in _types) {
 				type.Revert();
 			}
 			_types = null;
