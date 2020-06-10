@@ -31,8 +31,5 @@ namespace TrafficManager.RedirectionFramework {
 			}
 			_types = null;
 		}
-
 	}
-
-
 }
