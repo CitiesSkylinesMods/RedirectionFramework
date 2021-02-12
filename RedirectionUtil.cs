@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -101,7 +101,6 @@ namespace TrafficManager.RedirectionFramework {
 			var tuple = RedirectMethod(targetType, method, reverse);
 			redirects.Add(tuple.First, tuple.Second);
 		}
-
 
 		private static Tuple<MethodInfo, RedirectCallsState> RedirectMethod(Type targetType, MethodInfo detour, bool reverse) {
 			String originalMethodName = detourRegex.Replace(detour.Name, "");
